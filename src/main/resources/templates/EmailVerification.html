@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card mt-5">
+				
+						<h1 class="text-center m-3">Enter OTP..</h1>
+	<div th:if="${session.msg}" th:classappend="${session.type}" class="text-center" role="alert">
+<p th:text="${session.msg}"></p>
+	</div>
+
+
+						<div class="container">
+							<form class="form-signin" method="post" th:action="@{/email-verify-process}" action="#" >
+
+								<input
+										type="text" id="otp" name="otp" class="form-control m-3"
+										placeholder="Enter OTP here.." required autofocus>
+									<div class="container text-center m-3">
+										<button class="btn btn-primary">Verify</button>
+									</div>	
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

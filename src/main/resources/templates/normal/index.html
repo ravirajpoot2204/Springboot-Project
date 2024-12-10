@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org" th:replace="normal/normalbase::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="text-center" th:classappend="${message.type}" th:text="${message.content}"></div>
+		
+
+	<section class="banner d-flex justify-content-center align-item-center bg-size-cover">
+		<div class="home-body-div">
+			<h1 class="home-body-heading">Smart Contact Manager</h1>
+			<p>Start save you contact smartly..</p>
+	
+			<a th:href="@{/user/add-contact}" class="btn bg-primary btn-lg text-white w-100">Add Now!!</a>
+
+<hr />
+<h1 class="my-3">Donate us</h1>
+<input type="text" class="form-control my-3" id="payField" placeholder="Enter your amount here"/>
+<div class="container text-center">
+<button class="btn btn-outline-primary w-100" onclick="paymentStart()" >Pay</button>
+</div>
+		</div>
+
+<script>
+$(document).ready(()=>
+{
+	$('.item').removeClass('active');
+	$('#home-link').addClass('active');
+
+} );
+ 	
+</script>
+
+	</section>
+	
+</body>
+</html>
