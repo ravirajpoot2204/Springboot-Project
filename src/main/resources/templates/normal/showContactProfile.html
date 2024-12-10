@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org" th:replace="normal/normalbase::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		
+	<section>
+<div class="card">
+<div class="card-body">
+
+<div class="container text-center">
+<img id="profile-Pic" style="height:200px; width:200px ; border-radius: 50%; object-fit: cover; border: 0.5px solid black;"  th:src="@{'/img/'+${oneContact.getImageurl}}" src="#" alt="Profile Pic" />
+							
+<h3 th:text="${oneContact.getName}+' ('+${oneContact.getNickName}+')'"></h3>
+
+
+	<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col" ><span th:text="${oneContact.getCid}"></span></th>
+						
+						</tr>
+					</thead>
+					
+					<tbody>
+					
+						<tr >
+							<th scope="row">Email</th>
+							<td>
+								<span  th:text="${oneContact.getEmail}">
+							</span>
+							</td>
+						</tr>
+						<tr >
+							<th scope="row">Phone</th>
+							<td>
+								<span  th:text="${oneContact.getPhone}">
+							</span>
+							</td>
+						</tr>
+						<tr >
+							<th scope="row">Work</th>
+							<td>
+								<span  th:text="${oneContact.getWork}">
+							</span>
+							</td>
+						</tr>
+					
+					
+					
+					</tbody>
+
+
+
+				</table>
+
+	<div class="description mt-3">
+		<th:block th:utext="${oneContact.getDescription}">
+
+		</th:block>
+	</div>
+  <div class="container text-center">
+  
+ 		<a href="#" th:onclick="|deleteContact(${oneContact.getCid})|"
+ 		class="btn btn-danger btn-sm">Delete</a> 
+								
+
+		<form 
+		method="Post" 
+		action="#" 
+		th:action="@{'/user/contact/update/'+${oneContact.getCid}}"
+		class="mt-2"
+		>
+		<button href="#" class="btn btn-primary btn-sm">Update</button>
+									</form>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+	</section>
+</body>
+</html>

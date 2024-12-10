@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org" th:replace="normal/normalbase::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		
+	<section>
+	
+<div class="card mx-3 mt-3">
+<div class="card-body">
+<div class="container">
+<div class="alert" th:classappend="${cmt}" id="addAlert" th:text="${checkStatus}">
+</div>
+</div>
+<h1 class="text-center">
+Update User Form
+</h1>
+
+<div class="container-fluid mt-1">
+<div class="row">
+<div class="col-md-10 offset-md-1">
+<form 
+	enctype="multipart/form-data"
+	action="#" 
+	th:action="@{/user/update-User-Process}" 
+	th:object="${user}" 
+	method="POST">
+	
+	<input type="hidden" th:value="${user.getUid}" name="uid"  />
+<!--1  Image -->
+
+<div class="container" style="text-align: center;">
+<img src="#" id="profile-Pic-update" th:src="@{'/img/'+${user.getImageurl}}" alt="profile-pic" />
+</div>
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+  <input 
+    name="profilePic"
+	type="file" 
+	
+ 
+	class="form-control" 
+	id="imgurl"
+
+   
+	></div>
+
+
+<!--2  name -->
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+   <input 
+    name="name"
+    type="text" 
+    th:value="${user.getName}"
+    class="form-control " 
+   	id="name" 
+    placeholder="Enter Your Name">
+    </div>
+  
+<!--3  Email -->
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+    <input 
+    name="email"
+    type="email" 
+       th:value="${user.getEmail}"
+ 
+    class="form-control" 
+    id="email" 
+    aria-describedby="emailHelp" 
+    placeholder="Your email">
+    </div>
+    
+    
+<!--4  Phone no -->
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+<input 
+    name="phone"
+	type="text" 
+	   th:value="${user.getPhone}"
+ 
+	class="form-control" 
+	id="phone"
+	placeholder="Phone no.">
+	</div>
+<!--5  description -->
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+   <textarea 
+
+  name="description" 
+  id="description"  
+  rows="10" 
+     th:text="${user.getDescription}"
+ 
+  class="form-control" 
+  placeholder="Describe your contact (Optional)"
+   
+  >
+  </textarea>
+ </div>
+  <div class="container text-center">
+  
+  <button 
+  type="reset" 
+  class="btn btn-warning  text-white">
+  Reset
+  </button>
+
+  <button 
+  type="submit" 
+  class="btn btn-primary btn-block text-white">
+Save
+  </button>
+
+</div>
+  
+</form>
+	
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+	
+	
+
+	</section>
+</body>
+</html>
