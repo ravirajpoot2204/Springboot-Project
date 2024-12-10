@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+body {
+	background-color: rgb(236, 236, 236) !important;
+}
+
+.bg-primary {
+	background: rgb(0, 87, 79) !important;
+}
+/* Banner Styling */
+.banner {
+	width: 110pc;
+	height: 55pc;
+	margin-top: -7vw;
+	margin-left: -11vw;
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+		url(../img/bg7.jpg);
+	background-size: cover;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 0; /* Ensure the banner appears below the content */
+}
+
+.home-body-heading {
+	font-weight: bold;
+}
+
+.home-body-div {
+	text-align: center;
+}
+
+.my-card {
+	padding: 20px;
+	background: #ffffff;
+}
+
+/* Sidebar Styling */
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: -250px;
+	width: 250px;
+	height: 100%;
+	background-color: white;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease;
+	z-index: 1000;
+	padding-top: 20px;
+}
+
+.sidebar.show {
+	left: 0;
+}
+
+.sidebar a {
+	display: block;
+	padding: 10px 25px;
+	width: 100%;
+	text-decoration: none;
+	color: teal;
+}
+
+.sidebar a:hover {
+	background-color: gray;
+	color: white;
+}
+
+.sidebar .divider {
+	height: .5px;
+	width: 100%;
+	background: red;
+	margin-top: 10px;
+}
+
+.sidebar-item {
+	display: block;
+	padding: 15px 20px;
+	color: #333;
+	text-decoration: none;
+	font-size: 16px;
+	border-bottom: 1px solid #ddd;
+}
+
+.sidebar-item:hover {
+	background-color: #f0f0f0;
+	color: #007bff;
+}
+
+.crossbtn {
+	position: absolute;
+	top: -6px;
+	right: 8px;
+	font-size: 38px;
+	cursor: pointer;
+	color: #008080;
+}
+
+.divider {
+	height: 1px;
+	background-color: #ddd;
+	margin: 20px 0;
+}
+
+/* Content Styling */
+/* Content Styling */
+.content {
+	margin-top: 120px; /* Adjust this value based on your navbar height */
+	margin: 0 auto; /* Center the content horizontally */
+	max-width: 80%; /* Set the maximum width of the content area */
+	padding: 20px; /* Add some padding for better readability */
+	z-index: 1; /* Ensure the content appears above the sidebar */
+	position: relative;
+}
+
+@media ( max-width : 767.98px) {
+	.content {
+		margin-top: 30%; /* Adjust margin for small screens */
+		padding: 10px; /* Adjust the padding for small screens */
+		max-width: 90%; /* Increase max-width for small screens */
+	}
+	#sidebar.show {
+		width: 50vw;
+		margin-top: 12vw;
+		padding-top: 13vw;
+		left: 0px;
+		opacity: 0.95;
+	}
+}
+
+@media ( min-width : 768px) and (max-width: 991.98px) {
+	.content {
+		margin-top: 20%;
+		padding: 0px; /* Adjust the padding for medium screens */
+		max-width: 80%; /* Adjust max-width for medium screens */
+	}
+	#sidebar.show {
+		margin-top: 7vw;
+		padding-top: 9vw;
+		left: 0;
+	}
+}
+
+@media ( min-width : 992px) {
+	.content {
+		margin-top: 5vw;
+		padding: 15px;
+		max-width: 80%;
+	}
+	#sidebar.show {
+		margin-top: 3vw;
+		padding-top: 4vw;
+		left: 0;
+	}
+}
+
+/* Additional Styles */
+.index {
+	padding-top: 4vw;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: baseline;
+	justify-content: flex-start;
+}
+
+.barbtn #bar {
+	position: relative;
+	top: 0;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+.card-body {
+	flex: 1 1 auto;
+	padding: 2rem 0;
+}
+
+.card {
+	margin-top: -92px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 50vw;
+	max-width: 90vw;
+	width: 80vw;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, .125);
+}
+
+#cicon {
+	margin: 7px;
+}
+
+.input-group {
+	margin: 1rem;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+}
+
+#profile-Pic-View-Contact {
+	border-radius: 50%;
+	margin: 8px;
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+	border: 0.5px solid black;
+}
+
+#profile-Pic-update {
+	border-radius: 27%;
+	margin: 8px;
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	border: 1.5px solid black;
+}
+
+.sidebar.show {
+	margin-top: 4vw;
+	padding-top: 4vw;
+	left: 2px;
+}
+
+.content.shift {
+	left: 6vw;
+}
+
+#bar {
+	margin-right: 20px;
+	display: inline-block;
+}
+
+/* Search Css */
+.search-container {
+	position: relative;
+}
+
+.search-result {
+	position: absolute;
+	background-color: white;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid gray;
+	display: none;
+}
+
+.active {
+	background-color: #2282ff !important;
+	color: white !important;
+}
