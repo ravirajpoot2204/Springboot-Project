@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org" th:replace="normal/normalbase::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		
+	<section>
+	
+<div class="card mx-3 mt-3">
+<div class="card-body">
+<div class="container">
+<div class="alert" th:classappend="${cmt}" id="addAlert" th:text="${checkStatus}">
+</div>
+</div>
+<h1 class="text-center">
+Add Contact
+</h1>
+
+<div class="container-fluid mt-1">
+<div class="row">
+<div class="col-md-10 offset-md-1">
+<form 
+	enctype="multipart/form-data"
+	action="#" 
+	th:action="@{/user/add-Contact-Process}" 
+	th:object="${contact}" 
+	method="post">
+
+<!--1  name -->
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+   <input 
+    name="name"
+    type="text" 
+    class="form-control " 
+   	id="name" 
+    placeholder="Enter Your Name">
+    </div>
+    
+<!--2  nickname -->
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+     <input 
+    name="nickName"
+	type="text" 
+	class="form-control" 
+	id="nickname"
+	placeholder="Contact's NickName">
+	</div>
+	
+<!--3  Email -->
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+    <input 
+    name="email"
+    type="email" 
+    class="form-control" 
+    id="email" 
+    aria-describedby="emailHelp" 
+    placeholder="Your email">
+    </div>
+    
+    
+<!--4  Phone no -->
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+<input 
+    name="phone"
+	type="text" 
+	class="form-control" 
+	id="phone"
+	placeholder="Phone no.">
+	</div>
+<!--5  Work -->
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+   <input 
+    name="work"
+	type="text" 
+	class="form-control" 
+	id="work"
+	  placeholder="Work"
+   
+	>
+	</div>
+<!--6  Image -->
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+  <input 
+    name="profilePic"
+	type="file" 
+	class="form-control" 
+	id="imgurl"
+	  placeholder="Choose Image"
+   
+	></div>
+<!--7  description -->
+<div class="input-group">
+<div class="input-group-prepend" id="cicon">
+<div class="inpput-group-text">
+<i class="fa-solid fa-plus"></i>
+</div>
+</div>
+   <textarea 
+
+  name="description" 
+  id="description"  
+  rows="10" 
+  class="form-control" 
+  placeholder="Describe your contact (Optional)"
+   
+  >
+  </textarea>
+ </div>
+  <div class="container text-center">
+  
+  <button 
+  type="reset" 
+  class="btn btn-warning  text-white">
+  Reset
+  </button>
+
+  <button 
+  type="submit" 
+  class="btn btn-primary btn-block text-white">
+Save
+  </button>
+
+</div>
+  
+</form>
+	<!-- use tinymice so we can add more functionality like word i could not because internet issue -->
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+	
+	
+<script>
+$(document).ready(()=>
+{
+	$('.item').removeClass('active');
+	$('#add-link').addClass('active');
+
+} );
+ 	
+</script>
+
+	</section>
+</body>
+</html>
