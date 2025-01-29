@@ -1,0 +1,33 @@
+body {
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+h1 {
+    color: #007bff; /* Bootstrap primary color */
+}
+
+.table {
+    background-color: white; /* White background for table */
+    border-radius: 0.5rem; /* Rounded corners */
+    overflow: hidden; /* Clip the table borders */
+}
+
+.table th, .table td {
+    vertical-align: middle; /* Center align table cells */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2; /* Light gray for odd rows */
+}
+
+.navbar {
+    margin-bottom: 20px; /* Space below navbar */
+}
+
+.btn-outline-success, .btn-outline-warning, .btn-outline-primary {
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-outline-success:hover, .btn-outline-warning:hover, .btn-outline-primary:hover {
+    background-color: #e2e6ea; /* Lighten on hover */
+}
